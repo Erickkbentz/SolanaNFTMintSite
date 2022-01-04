@@ -14,3 +14,13 @@ a {
 * {
   box-sizing: border-box;
 }
+
+.navbar-global {
+  width: 100%;
+  background-color: rgb(24, 9, 53);
+  margin:0px;
+  position: fixed !important;
+  top:0;
+  padding: 25px;
+  height: 3.5em;
+}
