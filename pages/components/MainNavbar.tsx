@@ -1,9 +1,10 @@
 import React from "react";
 import Link from 'next/link'
+import { Wallet } from './Wallet'
 import {
   Navbar,
   Nav,
-} from 'react-bootstrap';
+} from 'react-bootstrap'
 
 class MainNavbar extends React.Component {
   render() {
@@ -16,7 +17,7 @@ class MainNavbar extends React.Component {
         </Link>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
-              <Nav className="ms-auto">
+              <Nav className="ms-auto" style={{padding:5}}>
                 <Link href="/" passHref>
                   <Nav.Link>MINT!</Nav.Link>
                 </Link>
@@ -29,6 +30,7 @@ class MainNavbar extends React.Component {
                 <Link href="/" passHref>
                   <Nav.Link>Contact</Nav.Link>
                 </Link>
+                <Wallet/>
               </Nav>
         </Navbar.Collapse>
       </Navbar>
