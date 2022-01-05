@@ -15,7 +15,7 @@ class MainNavbar extends React.Component {
   render() {
     return (
       <Navbar sticky="top" variant="dark" expand="lg" className="navbar-global">
-        <Link href="/" passHref>
+        <Link href="#home" passHref>
           <Navbar.Brand href="#home">
             <img src="/solanaLogo.svg" height="30" className="d-inline-block align-top" alt=""/>
           </Navbar.Brand>
@@ -23,8 +23,11 @@ class MainNavbar extends React.Component {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
               <Nav className="ms-auto" style={{padding:5}}>
-                <Link href="/" passHref>
+                <Link href="#mintView"passHref>
                   <Nav.Link>Mint!</Nav.Link>
+                </Link>
+                <Link href="#home" passHref>
+                  <Nav.Link>Home</Nav.Link>
                 </Link>
                 <Link href="/" passHref>
                   <Nav.Link>Story</Nav.Link>
@@ -37,6 +40,7 @@ class MainNavbar extends React.Component {
                 </Link>
                 <WalletModalProvider>
                     <WalletMultiButton style={{height:40}}>
+                      Connect Wallet
                     </WalletMultiButton>
                 </WalletModalProvider>
               </Nav>

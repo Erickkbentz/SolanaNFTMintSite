@@ -1,10 +1,8 @@
 import React, { FC, useEffect, useState, useMemo} from "react";
 import { Button } from "react-bootstrap";
 import { useWallet, useConnection} from '@solana/wallet-adapter-react'
-import { clusterApiUrl, Connection} from '@solana/web3.js';
-import { ConnectionProvider, WalletProvider } from '@solana/wallet-adapter-react';
-import { WalletAdapterNetwork } from '@solana/wallet-adapter-base';
 import { LAMPORTS_PER_SOL } from "@solana/web3.js";
+import swal from 'sweetalert'
 
 export const MintView: FC = () => {
   const [balance, setBalance] = useState<number>();
@@ -25,6 +23,17 @@ export const MintView: FC = () => {
     })()
   })
 
+  const mintNFT = async (event: { preventDefault: () => void; }) => {
+    event.preventDefault()
+    if (!wallet.connected) {
+      swal({
+        text: "Please Connect Wallet",
+        icon: "warning",
+        
+      });
+    }
+
+  }
  
 
   return (
@@ -39,7 +48,10 @@ export const MintView: FC = () => {
       }
       
       <p>0 of 100 Available</p>
-      <Button>Mint!</Button>      
+      <form onSubmit={mintNFT}>
+        <input id="mintAmount" name="mintAmount" type="number" min="1" style={{width:"5em", margin:"5px"}} required/>
+        <Button type="submit" style={{margin:"5px", background:"#553561"}}>Mint!</Button>   
+      </form>
     </main>
   )
   
