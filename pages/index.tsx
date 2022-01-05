@@ -1,10 +1,13 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
-
+import MintView from './components/MintView'
 import styles from '../styles/Home.module.css'
+import { useWallet } from '@solana/wallet-adapter-react'
 
 const Home: NextPage = () => {
+  const data = useWallet()
+
   return (
     <div className={styles.container}>
       <Head>
@@ -17,9 +20,10 @@ const Home: NextPage = () => {
         <h1 className={styles.title}>
           Welcome to <a href="https://nextjs.org">Sad Boiz!</a>
         </h1>
-      
       </main>
 
+      <MintView/>
+      
       <footer className={styles.footer}>
         <a>Powered by: </a>
         <a

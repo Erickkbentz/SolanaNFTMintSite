@@ -1,10 +1,15 @@
 import React from "react";
 import Link from 'next/link'
-import { Wallet } from './Wallet'
 import {
   Navbar,
   Nav,
 } from 'react-bootstrap'
+import {
+  WalletModalProvider,
+  WalletMultiButton
+} from '@solana/wallet-adapter-react-ui';
+
+require('@solana/wallet-adapter-react-ui/styles.css');
 
 class MainNavbar extends React.Component {
   render() {
@@ -19,7 +24,7 @@ class MainNavbar extends React.Component {
         <Navbar.Collapse id="basic-navbar-nav">
               <Nav className="ms-auto" style={{padding:5}}>
                 <Link href="/" passHref>
-                  <Nav.Link>MINT!</Nav.Link>
+                  <Nav.Link>Mint!</Nav.Link>
                 </Link>
                 <Link href="/" passHref>
                   <Nav.Link>Story</Nav.Link>
@@ -30,7 +35,10 @@ class MainNavbar extends React.Component {
                 <Link href="/" passHref>
                   <Nav.Link>Contact</Nav.Link>
                 </Link>
-                <Wallet/>
+                <WalletModalProvider>
+                    <WalletMultiButton style={{height:40}}>
+                    </WalletMultiButton>
+                </WalletModalProvider>
               </Nav>
         </Navbar.Collapse>
       </Navbar>
