@@ -18,7 +18,7 @@ const Home: NextPage = () => {
 
       <main id="home" className={styles.main}>
         <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Sad Boiz!</a>
+          Welcome to <a style={{color:"#553561"}}>Sad Boiz!</a>
         </h1>
       </main>
 
@@ -26,6 +26,25 @@ const Home: NextPage = () => {
         <MintView/>
       </div>
       
+      <div id="story" className={styles.main}>
+        <h1 className="mint-title">
+          Story Section
+        </h1>
+      </div>
+
+      <div id="faq" className={styles.main}>
+        <h1 className="mint-title">
+          FAQ Section
+        </h1>
+      </div>
+
+      <div id="contact" className={styles.main}>
+        <h1 className="mint-title">
+          Contact Section
+        </h1>
+      </div>
+
+
       <footer className={styles.footer}>
         <a>Powered by: </a>
         <a

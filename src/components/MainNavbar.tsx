@@ -29,18 +29,17 @@ class MainNavbar extends React.Component {
                 <Link href="#home" passHref>
                   <Nav.Link>Home</Nav.Link>
                 </Link>
-                <Link href="/" passHref>
+                <Link href="#story" passHref>
                   <Nav.Link>Story</Nav.Link>
                 </Link>
-                <Link href="/" passHref>
+                <Link href="#faq" passHref>
                   <Nav.Link>FAQ</Nav.Link>
                 </Link>
-                <Link href="/" passHref>
+                <Link href="#contact" passHref>
                   <Nav.Link>Contact</Nav.Link>
                 </Link>
                 <WalletModalProvider>
                     <WalletMultiButton style={{height:40}}>
-                      Connect Wallet
                     </WalletMultiButton>
                 </WalletModalProvider>
               </Nav>
