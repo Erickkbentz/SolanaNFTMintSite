@@ -1,13 +1,12 @@
-import React, { FC, useEffect, useState, useMemo} from "react";
+import React, { FC} from "react";
 import { Button } from "react-bootstrap";
-import { useWallet, useConnection} from '@solana/wallet-adapter-react'
-import { LAMPORTS_PER_SOL } from "@solana/web3.js";
+import { useWallet } from '@solana/wallet-adapter-react'
 import swal from 'sweetalert'
 import useWalletBalance from "../hooks/useWalletBalance";
 
 export const MintView: FC = () => {
   const [balance] = useWalletBalance();
-  
+
   const wallet = useWallet()
 
   const mintNFT = async (event: { preventDefault: () => void; }) => {

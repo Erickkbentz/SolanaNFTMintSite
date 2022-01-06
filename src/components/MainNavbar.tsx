@@ -22,7 +22,7 @@ class MainNavbar extends React.Component {
         </Link>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
-              <Nav className="ms-auto" style={{padding:5}}>
+              <Nav className="ms-auto" style={{padding:5, background:"#180935", alignItems:"center"}}>
                 <Link href="#mintView"passHref>
                   <Nav.Link>Mint!</Nav.Link>
                 </Link>
